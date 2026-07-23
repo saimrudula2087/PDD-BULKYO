@@ -1,0 +1,24 @@
+{
+  "name": "bulkyo-selenium-e2e",
+  "version": "1.0.0",
+  "description": "Production-ready Selenium E2E Automation Framework for BulkyO React App",
+  "main": "tests/setup.js",
+  "type": "module",
+  "scripts": {
+    "discover": "node utilities/discoverer.js",
+    "test": "node utilities/runner.js",
+    "test:mocha": "mocha tests/e2e.test.js --timeout 120000 --reporter mochawesome --reporter-options reportDir=reports,reportFilename=index,html=true,json=true"
+  },
+  "dependencies": {
+    "chai": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "mocha": "^10.4.0",
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.22.0",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "tree-kill": "^1.2.2"
+  }
+}

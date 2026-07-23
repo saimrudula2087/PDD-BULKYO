@@ -1,0 +1,59 @@
+name: Selenium E2E Automation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+
+    - name: Install Frontend Dependencies
+      run: |
+        cd frontend
+        npm install
+
+    - name: Install Root Dependencies
+      run: |
+        npm install
+
+    - name: Run E2E Tests
+      env:
+        HEADLESS: "true"
+        BROWSER: "chrome"
+        BASE_URL: "http://localhost:5173"
+      run: |
+        npm run test
+
+    - name: Upload Excel Test Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: excel-report
+        path: excel/E2E_Report.xlsx
+
+    - name: Upload Mochawesome HTML Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: html-report
+        path: reports/
+
+    - name: Upload Logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: execution-logs
+        path: logs/
