@@ -200,8 +200,10 @@ describe('BulkyO E2E Test Suite', function() {
       // Place order
       await checkoutPage.confirmBooking();
 
-      // Wait for React Router navigation to complete
-      await driver.wait(until.urlContains('/customer/success'), 10000);
+      // Wait for React Router navigation to complete and heading to mount in DOM
+      const successHeading = By.xpath("//h1[contains(text(), 'Order Requested Successfully!')]");
+      await checkoutPage.utils.waitForElementVisible(successHeading, 10000);
+
       url = await checkoutPage.getCurrentUrl();
       expect(url).to.include('/customer/success');
 
