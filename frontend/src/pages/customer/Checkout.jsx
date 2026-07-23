@@ -8,7 +8,7 @@ const Checkout = () => {
   const { cart, removeFromCart, cartTotal, clearCart } = useCart();
   
   const [guests, setGuests] = useState(100);
-  const [date, setDate] = useState('');
+  const [date, setDate] = useState('2026-12-31');
 
   const handleCheckout = (e) => {
     e.preventDefault();

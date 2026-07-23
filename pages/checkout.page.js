@@ -15,7 +15,11 @@ export class CheckoutPage extends BasePage {
 
     const setReactValueScript = `
       function setReactValue(el, val) {
-        const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
+        var tracker = el._valueTracker;
+        if (tracker) {
+          tracker.setValue(val);
+        }
+        var nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value').set;
         nativeSetter.call(el, val);
         el.dispatchEvent(new Event('input', { bubbles: true }));
         el.dispatchEvent(new Event('change', { bubbles: true }));

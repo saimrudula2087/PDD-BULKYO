@@ -55,7 +55,7 @@
           "name": null,
           "placeholder": null,
           "accept": null,
-          "raw": "<input \n                type=\"number\" \n                min=\"50\"\n                required \n                value={guests}\n                onChange={(e) =>"
+          "raw": "<input \r\n                type=\"number\" \r\n                min=\"50\"\r\n                required \r\n                value={guests}\r\n                onChange={(e) =>"
         },
         {
           "tag": "input",
@@ -66,7 +66,7 @@
           "name": null,
           "placeholder": null,
           "accept": null,
-          "raw": "<input \n                type=\"date\" \n                required \n                value={date}\n                onChange={(e) =>"
+          "raw": "<input \r\n                type=\"date\" \r\n                required \r\n                value={date}\r\n                onChange={(e) =>"
         }
       ]
     },
@@ -83,7 +83,7 @@
           "name": null,
           "placeholder": "Search caterers by name or cuisine...",
           "accept": null,
-          "raw": "<input \n              type=\"text\" \n              placeholder=\"Search caterers by name or cuisine...\"\n              value={searchTerm}\n              onChange={(e) =>"
+          "raw": "<input \r\n              type=\"text\" \r\n              placeholder=\"Search caterers by name or cuisine...\"\r\n              value={searchTerm}\r\n              onChange={(e) =>"
         }
       ]
     },
@@ -100,7 +100,7 @@
           "name": null,
           "placeholder": null,
           "accept": null,
-          "raw": "<select \n              value={role} \n              onChange={(e) =>"
+          "raw": "<select \r\n              value={role} \r\n              onChange={(e) =>"
         },
         {
           "tag": "input",
