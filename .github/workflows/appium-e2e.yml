@@ -1,0 +1,71 @@
+name: Appium Android E2E Automation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  mobile-e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+
+    - name: Setup Java JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Enable KVM Hardware Acceleration
+      run: |
+        echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm-4-all.rules
+        sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
+
+    - name: Setup Android Emulator & Run Tests
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 33
+        target: google_apis
+        arch: x86_64
+        profile: pixel_6
+        script: |
+          npm install
+          npm install -g appium
+          appium driver install uiautomator2
+          appium --log-level info &
+          sleep 10
+          npm run analyze:mobile
+          npm run test:mobile
+
+    - name: Upload Mobile Excel Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: mobile-excel-report
+        path: excel/Mobile_E2E_Report.xlsx
+
+    - name: Upload Mochawesome HTML Report
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: mobile-html-report
+        path: reports/
+
+    - name: Upload Screenshots & Device Logs
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: mobile-failure-artifacts
+        path: |
+          reports/failures/
+          logs/

@@ -1,0 +1,393 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 11,
+    "passes": 11,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-07-23T05:19:47.898Z",
+    "end": "2026-07-23T05:19:47.925Z",
+    "duration": 27,
+    "testsRegistered": 11,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3f5ed736-493b-4de9-ba8e-2114174d5c46",
+      "title": "",
+      "fullFile": "C:\\Users\\saimr\\OneDrive\\Apps\\BulkyO\\BulkyO\\BulkyO\\tests\\mobile.e2e.test.js",
+      "file": "\\tests\\mobile.e2e.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "edc6a57e-29ac-43dc-a827-3d20266ded7d",
+          "title": "BulkyO Android Mobile E2E Automation Suite",
+          "fullFile": "C:\\Users\\saimr\\OneDrive\\Apps\\BulkyO\\BulkyO\\BulkyO\\tests\\mobile.e2e.test.js",
+          "file": "\\tests\\mobile.e2e.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"BulkyO Android Mobile E2E Automation Suite\"",
+              "fullTitle": "BulkyO Android Mobile E2E Automation Suite \"before all\" hook in \"BulkyO Android Mobile E2E Automation Suite\"",
+              "timedOut": false,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage = new LoginMobilePage(mobileDriver);\nregisterCustomerPage = new RegisterCustomerMobilePage(mobileDriver);\nregisterCatererPage = new RegisterCatererMobilePage(mobileDriver);\ncustomerDashboard = new CustomerDashboardMobilePage(mobileDriver);\nmenuDetailsPage = new MenuDetailsMobilePage(mobileDriver);\ncheckoutPage = new CheckoutMobilePage(mobileDriver);\nadminDashboard = new AdminDashboardMobilePage(mobileDriver);\ngestures = new MobileGestures(mobileDriver);",
+              "err": {},
+              "uuid": "9a80f7c4-c3d2-41b2-8c34-4272f6d6ca6a",
+              "parentUUID": "edc6a57e-29ac-43dc-a827-3d20266ded7d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "48ae6797-d025-41cc-b5b1-1d70e0c2976b",
+              "title": "Mobile Authentication & User Onboarding Workflows",
+              "fullFile": "C:\\Users\\saimr\\OneDrive\\Apps\\BulkyO\\BulkyO\\BulkyO\\tests\\mobile.e2e.test.js",
+              "file": "\\tests\\mobile.e2e.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should validate customer registration flow",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Mobile Authentication & User Onboarding Workflows Should validate customer registration flow",
+                  "timedOut": false,
+                  "duration": 4,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = 'TC-MOB-001';\nmobileLogger.info('>>> Starting Mobile Test: Customer Registration Flow');\n\nconst startTime = Date.now();\nexpect(loginPage).to.not.be.null;\nconst appPackage = await loginPage.getPackageName();\nexpect(appPackage).to.be.a('string');\n// Record performance metric\nconst launchDuration = Date.now() - startTime;\nmobileLogger.info(`App Launch Performance Metric: ${launchDuration}ms`);",
+                  "err": {},
+                  "uuid": "a0f9293b-0ec5-4732-87b3-7badcdd9453a",
+                  "parentUUID": "48ae6797-d025-41cc-b5b1-1d70e0c2976b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should validate caterer registration & license upload",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Mobile Authentication & User Onboarding Workflows Should validate caterer registration & license upload",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = 'TC-MOB-002';\nmobileLogger.info('>>> Starting Mobile Test: Caterer Registration & FSSAI License Flow');\n\nconst activity = await registerCatererPage.getActivityName();\nexpect(activity).to.be.a('string');",
+                  "err": {},
+                  "uuid": "7c10ff8b-2db4-4116-8115-dade3a9964e4",
+                  "parentUUID": "48ae6797-d025-41cc-b5b1-1d70e0c2976b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should validate admin approval for pending caterers",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Mobile Authentication & User Onboarding Workflows Should validate admin approval for pending caterers",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = 'TC-MOB-003';\nmobileLogger.info('>>> Starting Mobile Test: Admin Approval Flow');\nexpect(adminDashboard).to.not.be.null;",
+                  "err": {},
+                  "uuid": "d325060a-c639-46cf-bf4f-d85c028b7516",
+                  "parentUUID": "48ae6797-d025-41cc-b5b1-1d70e0c2976b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Should validate end-to-end customer order flow (Search -> Menu -> Cart -> Checkout)",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Mobile Authentication & User Onboarding Workflows Should validate end-to-end customer order flow (Search -> Menu -> Cart -> Checkout)",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = 'TC-MOB-004';\nmobileLogger.info('>>> Starting Mobile Test: Full Customer Order Workflow');\nexpect(customerDashboard).to.not.be.null;\nexpect(checkoutPage).to.not.be.null;",
+                  "err": {},
+                  "uuid": "473b8e81-3d04-4306-ac3d-cb0293ef3991",
+                  "parentUUID": "48ae6797-d025-41cc-b5b1-1d70e0c2976b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a0f9293b-0ec5-4732-87b3-7badcdd9453a",
+                "7c10ff8b-2db4-4116-8115-dade3a9964e4",
+                "d325060a-c639-46cf-bf4f-d85c028b7516",
+                "473b8e81-3d04-4306-ac3d-cb0293ef3991"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 180000
+            },
+            {
+              "uuid": "f680bbd9-2e55-45bc-a401-7bba75d65357",
+              "title": "Android Touch Gesture Automation",
+              "fullFile": "C:\\Users\\saimr\\OneDrive\\Apps\\BulkyO\\BulkyO\\BulkyO\\tests\\mobile.e2e.test.js",
+              "file": "\\tests\\mobile.e2e.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should execute Swipe, Scroll, Tap, and Long Press gestures",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Android Touch Gesture Automation Should execute Swipe, Scroll, Tap, and Long Press gestures",
+                  "timedOut": false,
+                  "duration": 3,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = 'TC-MOB-005';\nmobileLogger.info('>>> Starting Mobile Test: W3C Touch Gesture Validation');\n// Execute gestures\nawait gestures.swipeUp(0.5);\nawait gestures.swipeDown(0.5);\nawait gestures.swipeLeft(0.5);\nawait gestures.swipeRight(0.5);\n\nexpect(gestures).to.not.be.null;",
+                  "err": {},
+                  "uuid": "826a48d7-ffd8-465e-b8ea-920fa4a02698",
+                  "parentUUID": "f680bbd9-2e55-45bc-a401-7bba75d65357",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "826a48d7-ffd8-465e-b8ea-920fa4a02698"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 180000
+            },
+            {
+              "uuid": "5ca3c9e8-1e5d-4f6d-8ac1-0383eddf9cc0",
+              "title": "Mobile Navigation & Bottom Tab Verification",
+              "fullFile": "C:\\Users\\saimr\\OneDrive\\Apps\\BulkyO\\BulkyO\\BulkyO\\tests\\mobile.e2e.test.js",
+              "file": "\\tests\\mobile.e2e.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Should verify bottom navigation tabs and back button behavior",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Mobile Navigation & Bottom Tab Verification Should verify bottom navigation tabs and back button behavior",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = 'TC-MOB-006';\nmobileLogger.info('>>> Starting Mobile Test: Bottom Navigation & Screen Transitions');\nexpect(customerDashboard.homeTab).to.equal('~tab_home');\nexpect(customerDashboard.ordersTab).to.equal('~tab_orders');\nexpect(customerDashboard.profileTab).to.equal('~tab_profile');",
+                  "err": {},
+                  "uuid": "23f70a26-a2a3-4ae3-8de1-013d8cc753f8",
+                  "parentUUID": "5ca3c9e8-1e5d-4f6d-8ac1-0383eddf9cc0",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "23f70a26-a2a3-4ae3-8de1-013d8cc753f8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 180000
+            },
+            {
+              "uuid": "f58a3055-5085-477f-8fde-44f1ca411107",
+              "title": "Dynamic Form Constraints & Screen Rules",
+              "fullFile": "C:\\Users\\saimr\\OneDrive\\Apps\\BulkyO\\BulkyO\\BulkyO\\tests\\mobile.e2e.test.js",
+              "file": "\\tests\\mobile.e2e.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Validate AuthScreens email format constraint on field \"Email\" [TC-MOB-DYN-001]",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Dynamic Form Constraints & Screen Rules Validate AuthScreens email format constraint on field \"Email\" [TC-MOB-DYN-001]",
+                  "timedOut": false,
+                  "duration": 1,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = tc.testId;\nmobileLogger.info(`Running dynamic mobile validation: ${tc.scenario}`);\nexpect(tc.fieldType).to.be.oneOf(['email', 'password', 'number', 'text']);",
+                  "err": {},
+                  "uuid": "b430d673-f1a2-4ff2-be60-1890e1bde769",
+                  "parentUUID": "f58a3055-5085-477f-8fde-44f1ca411107",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Validate AuthScreens password complexity constraint on field \"Password\" [TC-MOB-DYN-002]",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Dynamic Form Constraints & Screen Rules Validate AuthScreens password complexity constraint on field \"Password\" [TC-MOB-DYN-002]",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = tc.testId;\nmobileLogger.info(`Running dynamic mobile validation: ${tc.scenario}`);\nexpect(tc.fieldType).to.be.oneOf(['email', 'password', 'number', 'text']);",
+                  "err": {},
+                  "uuid": "294d9287-ac4a-4392-84ba-7521dc902488",
+                  "parentUUID": "f58a3055-5085-477f-8fde-44f1ca411107",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Validate AuthScreens email format constraint on field \"Email\" [TC-MOB-DYN-003]",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Dynamic Form Constraints & Screen Rules Validate AuthScreens email format constraint on field \"Email\" [TC-MOB-DYN-003]",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = tc.testId;\nmobileLogger.info(`Running dynamic mobile validation: ${tc.scenario}`);\nexpect(tc.fieldType).to.be.oneOf(['email', 'password', 'number', 'text']);",
+                  "err": {},
+                  "uuid": "7c4cdcfe-e89c-49cc-b359-3c01a46145e4",
+                  "parentUUID": "f58a3055-5085-477f-8fde-44f1ca411107",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Validate AuthScreens password complexity constraint on field \"Password\" [TC-MOB-DYN-004]",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Dynamic Form Constraints & Screen Rules Validate AuthScreens password complexity constraint on field \"Password\" [TC-MOB-DYN-004]",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = tc.testId;\nmobileLogger.info(`Running dynamic mobile validation: ${tc.scenario}`);\nexpect(tc.fieldType).to.be.oneOf(['email', 'password', 'number', 'text']);",
+                  "err": {},
+                  "uuid": "eff2eee8-540c-4db1-8885-63b2045afd37",
+                  "parentUUID": "f58a3055-5085-477f-8fde-44f1ca411107",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Validate OrderSetupScreen numeric bound constraint on field \"Number of Guests\" [TC-MOB-DYN-005]",
+                  "fullTitle": "BulkyO Android Mobile E2E Automation Suite Dynamic Form Constraints & Screen Rules Validate OrderSetupScreen numeric bound constraint on field \"Number of Guests\" [TC-MOB-DYN-005]",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "this.test.testCaseId = tc.testId;\nmobileLogger.info(`Running dynamic mobile validation: ${tc.scenario}`);\nexpect(tc.fieldType).to.be.oneOf(['email', 'password', 'number', 'text']);",
+                  "err": {},
+                  "uuid": "c509a247-c1b4-47eb-afd9-b11d1aae93ad",
+                  "parentUUID": "f58a3055-5085-477f-8fde-44f1ca411107",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b430d673-f1a2-4ff2-be60-1890e1bde769",
+                "294d9287-ac4a-4392-84ba-7521dc902488",
+                "7c4cdcfe-e89c-49cc-b359-3c01a46145e4",
+                "eff2eee8-540c-4db1-8885-63b2045afd37",
+                "c509a247-c1b4-47eb-afd9-b11d1aae93ad"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 180000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 180000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 180000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mobile_index",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "mobile_index",
+        "html": "true",
+        "json": "true"
+      },
+      "version": "6.3.2"
+    }
+  }
+}

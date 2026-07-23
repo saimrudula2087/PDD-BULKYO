@@ -1,0 +1,177 @@
+{
+  "discoveredScreens": 5,
+  "forms": [
+    {
+      "screenName": "AuthScreens",
+      "inputs": [
+        {
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "required": true
+        },
+        {
+          "label": "Full Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Email",
+          "type": "email",
+          "required": true
+        },
+        {
+          "label": "Password",
+          "type": "password",
+          "required": true
+        },
+        {
+          "label": "FSSAI Certificate Number",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "buttonCount": 7,
+      "checkboxCount": 0
+    },
+    {
+      "screenName": "BusinessInfoScreen",
+      "inputs": [
+        {
+          "label": "Business Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Base Location",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "FSSAI ID",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Min Capacity",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Max Capacity",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "buttonCount": 2,
+      "checkboxCount": 0
+    },
+    {
+      "screenName": "CatererSetupScreen",
+      "inputs": [
+        {
+          "label": "Business Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Field_2",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Minimum",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Maximum",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "buttonCount": 1,
+      "checkboxCount": 0
+    },
+    {
+      "screenName": "ManageMenuScreen",
+      "inputs": [
+        {
+          "label": "Name",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Field_2",
+          "type": "text",
+          "required": true
+        },
+        {
+          "label": "Category",
+          "type": "text",
+          "required": true
+        }
+      ],
+      "buttonCount": 6,
+      "checkboxCount": 0
+    },
+    {
+      "screenName": "OrderSetupScreen",
+      "inputs": [
+        {
+          "label": "Number of Guests",
+          "type": "number",
+          "required": true
+        }
+      ],
+      "buttonCount": 1,
+      "checkboxCount": 0
+    }
+  ],
+  "testCases": [
+    {
+      "testId": "TC-MOB-DYN-001",
+      "module": "AuthScreens",
+      "scenario": "Validate AuthScreens email format constraint on field \"Email\"",
+      "fieldType": "email",
+      "invalidInput": "invalid-mobile-email-format",
+      "expectedError": "Invalid Email Address"
+    },
+    {
+      "testId": "TC-MOB-DYN-002",
+      "module": "AuthScreens",
+      "scenario": "Validate AuthScreens password complexity constraint on field \"Password\"",
+      "fieldType": "password",
+      "invalidInput": "123",
+      "expectedError": "Password must be at least 6 characters"
+    },
+    {
+      "testId": "TC-MOB-DYN-003",
+      "module": "AuthScreens",
+      "scenario": "Validate AuthScreens email format constraint on field \"Email\"",
+      "fieldType": "email",
+      "invalidInput": "invalid-mobile-email-format",
+      "expectedError": "Invalid Email Address"
+    },
+    {
+      "testId": "TC-MOB-DYN-004",
+      "module": "AuthScreens",
+      "scenario": "Validate AuthScreens password complexity constraint on field \"Password\"",
+      "fieldType": "password",
+      "invalidInput": "123",
+      "expectedError": "Password must be at least 6 characters"
+    },
+    {
+      "testId": "TC-MOB-DYN-005",
+      "module": "OrderSetupScreen",
+      "scenario": "Validate OrderSetupScreen numeric bound constraint on field \"Number of Guests\"",
+      "fieldType": "number",
+      "invalidInput": "0",
+      "expectedError": "Value must be greater than 0"
+    }
+  ]
+}
