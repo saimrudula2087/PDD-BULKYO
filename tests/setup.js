@@ -17,6 +17,7 @@ export async function createDriver() {
       options.addArguments('--disable-gpu');
       options.addArguments('--no-sandbox');
       options.addArguments('--disable-dev-shm-usage');
+      options.addArguments('--window-size=1280,1024');
     }
     builder.setChromeOptions(options);
   } else if (browser === 'firefox') {
